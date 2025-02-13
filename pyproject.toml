@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "python-01"
 version = "0.1.0"
-description = ""
+description = "Atividade 1 - Cálculo de KPI"
 authors = ["Rafael Alvarenga <devrafaelalvarenga@gmail.com>"]
 readme = "README.md"
 
