@@ -57,21 +57,29 @@ if __name__ == "__main__":  # Executa o código abaixo apenas se este arquivo fo
 '''
 # 4. Faça um programa que peça dois números inteiros e imprima a divisão inteira do primeiro pelo segundo.
 '''
-def dividir_inteiro(num_1 = int, num_2 = int) -> int: # Função que recebe dois números inteiros e retorna a divisão inteira dos valores
+# Função que recebe dois números inteiros e retorna a divisão inteira dos valores
+def dividir_inteiro(num_1=int, num_2=int) -> int:
     return num_1 // num_2
 
-def obtem_numero_inteiro(mensagem = str) -> int: # Função que solicita um número inteiro ao usuário
-    while True: 
+# Função que solicita um número inteiro ao usuário
+def obtem_numero_inteiro(mensagem=str) -> int:
+    while True:
         try:
             return int(input(mensagem))
-        except ValueError: # Tratamento de erro para caso o usuário digite um valor inválido
+        except ValueError:  # Tratamento de erro para caso o usuário digite um valor inválido
             print('Digite um número inteiro válido.')
+
 
 if __name__ == "__main__":  # Executa o código abaixo apenas se este arquivo for executado diretamente
     num_1 = obtem_numero_inteiro('Digite um número inteiro: ')
     num_2 = obtem_numero_inteiro('Digite o segundo número inteiro: ')
-    resultado = dividir_inteiro(num_1, num_2)
-    print(f'O resultado da divisão inteira do numero {num_1} por {num_2} dos números é: {resultado}')
+    try:
+        num_2 != 0
+        resultado = dividir_inteiro(num_1, num_2)
+        print(
+            f'O resultado da divisão inteira do numero {num_1} por {num_2} dos números é: {resultado}')
+    except ZeroDivisionError:
+        print('Não é possível dividir por zero.')
 '''
 # 5. Escreva um programa que calcule o quadrado de um número fornecido pelo usuário.
 '''
@@ -95,10 +103,102 @@ if __name__ == "__main__":  # Executa o código abaixo apenas se este arquivo fo
 # #### Números de Ponto Flutuante (`float`)
 
 # 6. Escreva um programa que receba dois números flutuantes e realize sua adição.
+'''
+def somar(num_1=float, num_2=float) -> float:
+    return num_1 + num_2
+
+
+def obtem_numero_flutuante(mensagem=str) -> float:
+    while True:
+        try:
+            return float(input(mensagem))
+        except ValueError:
+            print('Digite um número flutuante válido.')
+
+
+if __name__ == "__main__":
+    num_1 = obtem_numero_flutuante('Digite o primeiro número flutuante: ')
+    num_2 = obtem_numero_flutuante('Digite o segundo número flutuante: ')
+    resultado = somar(num_1, num_2)
+    print(f'A soma dos números é: {resultado}')
+    '''
 # 7. Crie um programa que calcule a média de dois números flutuantes fornecidos pelo usuário.
+'''
+def calcular_media(num_1=float, num_2=float) -> float:
+    return (num_1 + num_2) / 2
+
+def obtem_media(mensagem=str) -> float:
+    while True:
+        try:
+            return float(input(mensagem))
+        except ValueError:
+            print('Digite um número flutuante válido.')
+
+if __name__ == "__main__":
+    num_1 = obtem_media('Digite o primeiro número flutuante: ')
+    num_2 = obtem_media('Digite o segundo número flutuante: ')
+    resultado = calcular_media(num_1, num_2)
+    print(f'A média dos números é: {resultado}')
+'''
 # 8. Desenvolva um programa que calcule a potência de um número (base e expoente fornecidos pelo usuário).
+''' 
+def calcular_potencia(base=int, expoente=int) -> int:
+    return pow(base, expoente)
+
+
+def obtem_base_expoente(mensagem=str) -> int:
+    while True:
+        try:
+            return int(input(mensagem))
+        except ValueError:
+            print('Digite um número inteiro válido.')
+
+
+if __name__ == "__main__":
+    base = obtem_base_expoente('Digite um valor para a base: ')
+    expoente = obtem_base_expoente('Digite um valor para o expoente: ')
+    resultado = calcular_potencia(base, expoente)
+    print(f'O resultado da potência do numero {base} elevado a {expoente} é: {resultado}')
+'''
 # 9. Faça um programa que converta a temperatura de Celsius para Fahrenheit.
+'''
+def converter_celsius_para_fahrenheit(celsius=float) -> float:
+    return (celsius * 9/5)+32
+
+
+def obtem_temperatura(mensagem=str) -> float:
+    while True:
+        try:
+            return float(input(mensagem))
+        except ValueError:
+            print('Digite um número flutuante válido.')
+
+
+if __name__ == "__main__":
+    celcius = obtem_temperatura('Digite a temperatura em Celsius a ser convertida em Fahrenheit: ')
+    resultado = converter_celsius_para_fahrenheit(celcius)
+    print(f'Temperatura {celcius}°C convertido em Fareinheit é: {resultado}°F')
+'''
 # 10. Escreva um programa que calcule a área de um círculo, recebendo o raio como entrada.
+
+def calcula_area_circulo(raio=float) -> float:
+    import math
+    return math.pi * pow(raio, 2)
+
+
+def obtem_raio(mensagem=str) -> float:
+    while True:
+        try:
+            return float(input(mensagem))
+        except ValueError:
+            print('Digite um número flutuante válido.')
+
+
+if __name__ == "__main__":
+    raio = obtem_raio('Digite o raio do circulo:')
+    resultado = calcula_area_circulo(raio)
+    print(f'A área do círculo com raio {raio} é: {resultado:.2f}')
+
 
 # #### Strings (`str`)
 
