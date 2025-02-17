@@ -180,7 +180,7 @@ if __name__ == "__main__":
     print(f'Temperatura {celcius}°C convertido em Fareinheit é: {resultado}°F')
 '''
 # 10. Escreva um programa que calcule a área de um círculo, recebendo o raio como entrada.
-
+''' 
 def calcula_area_circulo(raio=float) -> float:
     import math
     return math.pi * pow(raio, 2)
@@ -198,11 +198,25 @@ if __name__ == "__main__":
     raio = obtem_raio('Digite o raio do circulo:')
     resultado = calcula_area_circulo(raio)
     print(f'A área do círculo com raio {raio} é: {resultado:.2f}')
-
+'''
 
 # #### Strings (`str`)
 
 # 11. Escreva um programa que receba uma string do usuário e a converta para maiúsculas.
+'''
+def converter_maiscula(texto=str) -> str:
+    return texto.upper()
+
+
+def obtem_texto(mensagem=str) -> str:
+    return input(mensagem)
+
+
+if __name__ == '__main__':
+    texto = obtem_texto('Digite um texto: ')
+    resultado = converter_maiscula(texto)
+    print(f'O texto em maiusculo é: {resultado}')
+'''
 # 12. Crie um programa que receba o nome completo do usuário e imprima o nome com todas as letras minúsculas.
 # 13. Desenvolva um programa que peça ao usuário para inserir uma frase e, em seguida, imprima esta frase sem espaços em branco no início e no final.
 # 14. Faça um programa que peça ao usuário para digitar uma data no formato "dd/mm/aaaa" e, em seguida, imprima o dia, o mês e o ano separadamente.
