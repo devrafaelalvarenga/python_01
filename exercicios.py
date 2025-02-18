@@ -219,9 +219,50 @@ if __name__ == '__main__':
 '''
 # 12. Crie um programa que receba o nome completo do usuário e imprima o nome com todas as letras minúsculas.
 # 13. Desenvolva um programa que peça ao usuário para inserir uma frase e, em seguida, imprima esta frase sem espaços em branco no início e no final.
+'''def remover_espacos(texto=str) -> str:
+    return texto.strip() # Remove os espaços em branco no início e no final da string
+
+def obtem_texto(mensagem=str) -> str:
+    return input(mensagem)
+
+if __name__ == '__main__':
+    texto = obtem_texto('Digite um texto: ')
+    resultado = remover_espacos(texto)
+    print(f'O texto sem espaços é: {resultado}')
+'''
 # 14. Faça um programa que peça ao usuário para digitar uma data no formato "dd/mm/aaaa" e, em seguida, imprima o dia, o mês e o ano separadamente.
+'''
+def separar_data(data=str) -> str:
+    # Separa a data em uma lista de strings a partir do caracter '/'
+    return data.split(sep='/', maxsplit=3)
+
+
+def obtem_data(mensagem=str) -> str:
+    return input(mensagem)
+
+
+if __name__ == '__main__':  # Executa o código abaixo apenas se este arquivo for executado diretamente
+    data = obtem_data('Digite uma data no formato dd/mm/yyyy: ')
+    resultado = separar_data(data)
+    print(f'Dia: {resultado[0]} Mês: {resultado[1]} Ano: {resultado[2]}')
+'''
+
 # 15. Escreva um programa que concatene duas strings fornecidas pelo usuário.
 
+
+def concatenar_texto(texto_1=str, texto_2=str) -> str:
+    return texto_1+''+texto_2
+
+
+def obtem_texto(mensagem=str) -> str:
+    return input(mensagem)
+
+
+if __name__ == '__main__':
+    texto_1 = obtem_texto('Digite a primeira frase: ')
+    texto_2 = obtem_texto('Digite a segunda frase: ')
+    resultado = concatenar_texto(texto_1, texto_2)
+    print(f'O texto concatenado é: {resultado}')
 # #### Booleanos (`bool`)
 
 # 16. Escreva um programa que avalie duas expressões booleanas inseridas pelo usuário e retorne o resultado da operação AND entre elas.
