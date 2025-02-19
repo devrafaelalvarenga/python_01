@@ -246,10 +246,8 @@ if __name__ == '__main__':  # Executa o código abaixo apenas se este arquivo fo
     resultado = separar_data(data)
     print(f'Dia: {resultado[0]} Mês: {resultado[1]} Ano: {resultado[2]}')
 '''
-
 # 15. Escreva um programa que concatene duas strings fornecidas pelo usuário.
-
-
+'''
 def concatenar_texto(texto_1=str, texto_2=str) -> str:
     return texto_1+''+texto_2
 
@@ -263,12 +261,104 @@ if __name__ == '__main__':
     texto_2 = obtem_texto('Digite a segunda frase: ')
     resultado = concatenar_texto(texto_1, texto_2)
     print(f'O texto concatenado é: {resultado}')
+'''
 # #### Booleanos (`bool`)
 
 # 16. Escreva um programa que avalie duas expressões booleanas inseridas pelo usuário e retorne o resultado da operação AND entre elas.
+''' 
+def avaliar_expressao_booleana(exp_1=bool, exp_2=bool) -> bool:
+    if exp_1 == 'V' and exp_2 == 'V':
+        return 'Verdadeiro'
+    elif exp_1 == 'V' and exp_2 == 'F':
+        return 'Falso'
+    elif exp_1 == 'F' and exp_2 == 'V':
+        return 'Falso'
+    elif exp_1 == 'F' and exp_2 == 'F':
+        return 'Falso'
+
+
+def obtem_expressao_booleana(mensagem=str) -> bool:
+    return input(mensagem).upper()
+
+
+if __name__ == '__main__':
+    exp_1 = obtem_expressao_booleana(
+        'Digite a primeira expressão booleana (V ou F): ')
+    exp_2 = obtem_expressao_booleana(
+        'Digite a segunda expressão booleana (V ou F): ')
+    resultado = avaliar_expressao_booleana(exp_1, exp_2)
+    print(f'O resultado da operação AND entre as expressões é: {resultado}')
+'''
 # 17. Crie um programa que receba dois valores booleanos do usuário e retorne o resultado da operação OR.
+'''
+def avaliar_expressao_booleana(exp_1=bool, exp_2=bool) -> bool:
+    if exp_1 == 'V' or exp_2 == 'V':
+        return 'Verdadeiro'
+    elif exp_1 == 'V' or exp_2 == 'F':
+        return 'Verdadeiro'
+    elif exp_1 == 'F' and exp_2 == 'V':
+        return 'Verdadeiro'
+    elif exp_1 == 'F' and exp_2 == 'F':
+        return 'Falso'
+
+
+def obtem_expressao_booleana(mensagem=str) -> bool:
+    return input(mensagem).upper()
+
+
+if __name__ == '__main__':
+    exp_1 = obtem_expressao_booleana(
+        'Digite a primeira expressão booleana (V ou F): ')
+    exp_2 = obtem_expressao_booleana(
+        'Digite a segunda expressão booleana (V ou F): ')
+    resultado = avaliar_expressao_booleana(exp_1, exp_2)
+    print(f'O resultado da operação AND entre as expressões é: {resultado}')
+'''
 # 18. Desenvolva um programa que peça ao usuário para inserir um valor booleano e, em seguida, inverta esse valor.
+'''
+def alterar_expressao_booleana(exp_1: bool) -> bool:
+    return not exp_1
+
+
+def obtem_expressao_booleana(mensagem=str) -> bool:
+    # Converte a entrada para maiúsculo e remove espaços em branco
+    entrada = input(mensagem).capitalize().strip()
+    if entrada == 'True':
+        return True
+    elif entrada == 'False':
+        return False
+    else:
+        raise ValueError("Entrada inválida. Digite 'True' ou 'False'.")
+
+if __name__ == '__main__':
+    exp_1 = obtem_expressao_booleana(
+        'Digite expressão booleana (True ou False): ')
+    resultado = alterar_expressao_booleana(exp_1)
+    print(f'A inversão da expressão booleana {exp_1} é: {resultado}')
+'''
 # 19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
+'''
+def comparar_numeros(num_1=int, num_2=int) -> int:
+    if num_1 == num_2:
+        return 'Nümeros iguais'
+    else:
+        return 'Números diferentes'
+
+
+def obtem_numero(mensagem=str) -> int:
+    while True:
+        try:
+            return int(input(mensagem))
+        except ValueError:
+            print('Digite um número inteiro válido.')
+
+
+if __name__ == '__main__':
+    num_1 = obtem_numero('Digite o primeiro número: ')
+    num_2 = obtem_numero('Digite o segundo número: ')
+    resultado = comparar_numeros(num_1, num_2)
+    print(f'Os números são: {resultado}')
+'''
 # 20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
 
 # #### try-except e if
