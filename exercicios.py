@@ -265,54 +265,54 @@ if __name__ == '__main__':
 # #### Booleanos (`bool`)
 
 # 16. Escreva um programa que avalie duas expressões booleanas inseridas pelo usuário e retorne o resultado da operação AND entre elas.
-''' 
-def avaliar_expressao_booleana(exp_1=bool, exp_2=bool) -> bool:
-    if exp_1 == 'V' and exp_2 == 'V':
-        return 'Verdadeiro'
-    elif exp_1 == 'V' and exp_2 == 'F':
-        return 'Falso'
-    elif exp_1 == 'F' and exp_2 == 'V':
-        return 'Falso'
-    elif exp_1 == 'F' and exp_2 == 'F':
-        return 'Falso'
+'''
+def operacao_and(exp_1=bool, exp_2=bool) -> bool:
+    return exp_1 and exp_2
 
 
 def obtem_expressao_booleana(mensagem=str) -> bool:
-    return input(mensagem).upper()
+    entrada = input(mensagem).capitalize().strip()
+    if entrada == 'True':
+        return True
+    elif entrada == 'False':
+        return False
+    else:
+        raise ValueError("Entrada inválida. Digite 'True' ou 'False'.")
 
 
 if __name__ == '__main__':
+
     exp_1 = obtem_expressao_booleana(
-        'Digite a primeira expressão booleana (V ou F): ')
+        'Digite a primeira expressão booleana (True ou False): ')
     exp_2 = obtem_expressao_booleana(
-        'Digite a segunda expressão booleana (V ou F): ')
-    resultado = avaliar_expressao_booleana(exp_1, exp_2)
+        'Digite a segunda expressão booleana (True ou False): ')
+    resultado = operacao_and(exp_1, exp_2)
     print(f'O resultado da operação AND entre as expressões é: {resultado}')
 '''
 # 17. Crie um programa que receba dois valores booleanos do usuário e retorne o resultado da operação OR.
 '''
-def avaliar_expressao_booleana(exp_1=bool, exp_2=bool) -> bool:
-    if exp_1 == 'V' or exp_2 == 'V':
-        return 'Verdadeiro'
-    elif exp_1 == 'V' or exp_2 == 'F':
-        return 'Verdadeiro'
-    elif exp_1 == 'F' and exp_2 == 'V':
-        return 'Verdadeiro'
-    elif exp_1 == 'F' and exp_2 == 'F':
-        return 'Falso'
+def operacao_or(exp_1=bool, exp_2=bool) -> bool:
+    return exp_1 or exp_2
 
 
 def obtem_expressao_booleana(mensagem=str) -> bool:
-    return input(mensagem).upper()
+    entrada = input(mensagem).capitalize().strip()
+    if entrada == 'True':
+        return True
+    elif entrada == 'False':
+        return False
+    else:
+        raise ValueError("Entrada inválida. Digite 'True' ou 'False'.")
 
 
 if __name__ == '__main__':
+
     exp_1 = obtem_expressao_booleana(
-        'Digite a primeira expressão booleana (V ou F): ')
+        'Digite a primeira expressão booleana (True ou False): ')
     exp_2 = obtem_expressao_booleana(
-        'Digite a segunda expressão booleana (V ou F): ')
-    resultado = avaliar_expressao_booleana(exp_1, exp_2)
-    print(f'O resultado da operação AND entre as expressões é: {resultado}')
+        'Digite a segunda expressão booleana (True ou False): ')
+    resultado = operacao_and(exp_1, exp_2)
+    print(f'O resultado da operação OR entre as expressões é: {resultado}')
 '''
 # 18. Desenvolva um programa que peça ao usuário para inserir um valor booleano e, em seguida, inverta esse valor.
 '''
@@ -330,6 +330,7 @@ def obtem_expressao_booleana(mensagem=str) -> bool:
     else:
         raise ValueError("Entrada inválida. Digite 'True' ou 'False'.")
 
+
 if __name__ == '__main__':
     exp_1 = obtem_expressao_booleana(
         'Digite expressão booleana (True ou False): ')
@@ -337,6 +338,29 @@ if __name__ == '__main__':
     print(f'A inversão da expressão booleana {exp_1} é: {resultado}')
 '''
 # 19. Faça um programa que compare se dois números fornecidos pelo usuário são iguais.
+'''
+def comparar_numeros(num_1=float, num_2=float) -> float:
+    if num_1 == num_2:
+        return 'Nümeros iguais'
+    else:
+        return 'Números diferentes'
+
+
+def obtem_numero(mensagem=str) -> float:
+    while True:
+        try:
+            return float(input(mensagem))
+        except ValueError:
+            print('Digite um número válido.')
+
+
+if __name__ == '__main__':
+    num_1 = obtem_numero('Digite o primeiro número: ')
+    num_2 = obtem_numero('Digite o segundo número: ')
+    resultado = comparar_numeros(num_1, num_2)
+    print(f'Os números {num_1} e {num_2} são: {resultado}')
+'''
+# 20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
 '''
 def comparar_numeros(num_1=int, num_2=int) -> int:
     if num_1 == num_2:
@@ -359,11 +383,29 @@ if __name__ == '__main__':
     resultado = comparar_numeros(num_1, num_2)
     print(f'Os números são: {resultado}')
 '''
-# 20. Escreva um programa que verifique se dois números fornecidos pelo usuário são diferentes.
+
 
 # #### try-except e if
 
 # 21: Conversor de Temperatura
+def converter_celsius_para_fahrenheit(celsius=float) -> float:
+    return (celsius * 9/5)+32
+
+
+def obtem_temperatura(mensagem=str) -> float:
+    while True:
+        try:
+            return float(input(mensagem))
+        except ValueError:
+            print('Digite um número válido.')
+
+
+if __name__ == "__main__":
+    celcius = obtem_temperatura(
+        'Digite a temperatura em Celsius a ser convertida em Fahrenheit: ')
+    resultado = converter_celsius_para_fahrenheit(celcius)
+    print(f'Temperatura {celcius}°C convertido em Fareinheit é: {resultado}°F')
+
 # 22: Verificador de Palíndromo
 # 23: Calculadora Simples
 # 24: Classificador de Números
